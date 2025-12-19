@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acerca de | The Luxury Studio Barbershop</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, ::before, ::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      line-height: 1.6;
+      color: #fff;
+      background: #070707;
+      overflow-x: hidden;
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .text-center { text-align: center; }
+    .d-flex { display: flex; }
+    .justify-between { justify-content: space-between; }
+    .align-center { align-items: center; }
+    .flex-wrap { flex-wrap: wrap; }
+    .gap-1 { gap: 1rem; }
+    img { max-width: 100%; height: auto; }
+    a { text-decoration: none; color: inherit; }
+
+    h1, h2, h3, h4, h5, h6, nav a {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
+
+    /* Header con logo y menu */
+    header {
+      padding: 1rem 0;
+      background: rgba(0,0,0,0.9);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      border-bottom: 2px solid #d4af37;
+    }
+
+    .header-logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .header-logo img {
+      height: 120px;
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(212,175,55,0.5);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0.5rem 0;
+    }
+
+    nav a {
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      color: #d4af37;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover, nav a.active {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /* Sección Acerca de */
+    section {
+      padding: 100px 12%;
+      background: #070707;
+    }
+
+    h2 {
+      color: #d4af37;
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    p {
+      text-align: justify;
+      margin-bottom: 20px;
+      line-height: 1.7;
+      font-size: 1.1rem;
+    }
+
+    /* Grid de imágenes */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .image-item {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(212,175,55,0.2);
+    }
+
+    .image-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+
+    .image-item img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 30px;
+      color: #999;
+      border-top: 1px solid #333;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav { flex-direction: column; gap: 0.8rem; }
+      section { padding: 50px 5%; }
+      .image-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header con Logo y Menu -->
+  <header>
+    <div class="container">
+      <div class="header-logo">
+        <img src="logotipo.jpg" alt="The Luxury Studio Logo">
+      </div>
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="acerca.html" class="active">Acerca de</a>
+        <a href="precios.html">Precios</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Acerca de Section -->
+  <section>
+    <h2>Nuestra Filosofía</h2>
+    <p>
+      The Luxury Studio Barbershop nace de una obsesión poco compatible con la época: devolverle a la barbería su antigua dignidad de arte, ritual y distinción silenciosa. Mientras el mundo corre —ansioso, distraído, siempre llegando tarde a sí mismo— nosotros elegimos la pausa. Y en una era donde casi todo parece clonable, acelerado y desechable, apostamos sin complejos por lo irrepetible: lo personal.
+    </p>
+    <p>
+      Aquí los barberos no “cortan el pelo”. Interpretan. Observan como quien lee un buen libro: entre líneas, entre gestos, entre silencios. Son estilistas en el sentido más profundo de la palabra, conscientes de que el cabello y la barba no son simple materia moldeable, sino una extensión visible del carácter. Por eso cada servicio comienza con una conversación y no con unas tijeras. Primero se escucha. Luego, se decide. Y solo entonces, se crea.
+    </p>
+    <p>
+      El verdadero lujo —ese que no necesita demostraciones— no alza la voz. Susurra. Vive en la textura impecable de una toalla de algodón egipcio, en la precisión casi litúrgica de un rasurado clásico con navaja, en la calidez de un trato que no busca deslumbrar, sino hacerte sentir exactamente donde debes estar: como en casa… aunque con mejores espejos y, sobre todo, menos prisa.
+    </p>
+    <p>
+      The Luxury Studio Barbershop es, en esencia, una forma de resistencia elegante. Un refugio contra la urgencia constante, donde el tiempo se desacelera, la técnica se convierte en gesto artístico y el cuidado personal recupera su antigua nobleza. Porque verse bien importa, sin duda. Pero sentirse comprendido —eso— es el verdadero privilegio.
+    </p>
+
+    <!-- Grid de 3 imágenes -->
+    <div class="image-grid">
+      <div class="image-item">
+        <img src="imagen1.jpg" alt="Barbero trabajando con precisión">
+      </div>
+      <div class="image-item">
+        <img src="imagen2.jpg" alt="Ambiente de lujo en el salón">
+      </div>
+      <div class="image-item">
+        <img src="imagen3.jpg" alt="Cliente disfrutando de su experiencia">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 The Luxury Studio Barbershop
+  </footer>
+
+</body>
+</html>
