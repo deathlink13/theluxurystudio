@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto | The Luxury Studio Barbershop</title>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== RESET ===== */
+*, ::before, ::after{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+/* ===== VARIABLES ===== */
+:root{
+  --gold:#d4af37;
+  --gold-hover:#e6c973;
+  --black:#070707;
+  --black-card:#141414;
+  --white:#ffffff;
+  --gray:#cccccc;
+  --transition:all .3s ease;
+}
+
+/* ===== BODY ===== */
+body{
+  font-family:'Nunito',sans-serif;
+  line-height:1.6;
+  color:var(--white);
+  background-color:#050505;
+  background-image:url("data:image/svg+xml,%3Csvg width='320' height='320' viewBox='0 0 320 320' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23111111'%3E%3Ctext x='20' y='60' font-size='28'%3E✂️%3C/text%3E%3Ctext x='120' y='40' font-size='28'%3E🪒%3C/text%3E%3Ctext x='220' y='80' font-size='28'%3E💈%3C/text%3E%3Ctext x='40' y='160' font-size='28'%3E🧔%3C/text%3E%3Ctext x='180' y='160' font-size='28'%3E✂️%3C/text%3E%3Ctext x='260' y='200' font-size='28'%3E🪮%3C/text%3E%3Ctext x='100' y='240' font-size='28'%3E🪒%3C/text%3E%3Ctext x='200' y='300' font-size='28'%3E✂️%3C/text%3E%3C/g%3E%3C/svg%3E");
+  background-size:320px;
+  background-repeat:repeat;
+  background-attachment:fixed;
+  overflow-x:hidden;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:radial-gradient(circle at center,rgba(0,0,0,0.3),rgba(0,0,0,0.85));
+  pointer-events:none;
+  z-index:0;
+}
+
+/* ===== CONTAINER ===== */
+.container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 1rem;
+  position:relative;
+  z-index:10;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+  transition:var(--transition);
+}
+
+h1,h2,h3{
+  font-family:'Playfair Display',serif;
+  font-weight:600;
+}
+
+/* ===== HEADER ===== */
+header{
+  padding:0.8rem 0;
+  background:rgba(7,7,7,.98);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  border-bottom:2px solid var(--gold);
+  backdrop-filter:blur(5px);
+}
+
+.header-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  min-height:70px;
+}
+
+/* ===== LOGO ===== */
+.header-logo{
+  display:flex;
+  align-items:center;
+  gap:0.8rem;
+  flex-shrink:0;
+}
+
+.header-logo img{
+  height:65px;
+  width:65px;
+  border-radius:50%;
+  border:2px solid var(--gold);
+  object-fit:cover;
+  box-shadow:0 0 15px rgba(212,175,55,.4);
+}
+
+.logo-text{
+  display:none;
+}
+
+@media(min-width:768px){
+  .logo-text{
+    display:flex;
+    flex-direction:column;
+    line-height:1.1;
+  }
+  .logo-main{
+    font-size:1.2rem;
+    color:var(--gold);
+    font-weight:700;
+  }
+  .logo-sub{
+    font-size:0.75rem;
+    color:var(--gray);
+    letter-spacing:2px;
+    text-transform:uppercase;
+  }
+}
+
+/* ===== NAV DESKTOP ===== */
+nav.desktop-nav{
+  display:flex;
+  gap:1.2rem;
+  align-items:center;
+}
+
+nav.desktop-nav a{
+  color:var(--gold);
+  padding:0.5rem 0.8rem;
+  font-size:1.05rem;
+  position:relative;
+  font-family:'Playfair Display',serif;
+}
+
+nav.desktop-nav a::after{
+  content:'';
+  position:absolute;
+  bottom:-4px;
+  left:50%;
+  transform:translateX(-50%);
+  width:0;
+  height:2px;
+  background:var(--gold);
+  transition:var(--transition);
+}
+
+nav.desktop-nav a:hover,
+nav.desktop-nav a.active{
+  color:var(--white);
+}
+
+nav.desktop-nav a:hover::after,
+nav.desktop-nav a.active::after{
+  width:75%;
+}
+
+/* ===== HAMBURGER BUTTON - SOLO MOBILE/TABLET ===== */
+.hamburger{
+  display:none; /* OCULTO POR DEFECTO (DESKTOP) */
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:5px;
+  width:44px;
+  height:44px;
+  background:transparent;
+  border:2px solid var(--gold);
+  border-radius:8px;
+  cursor:pointer;
+  padding:10px;
+  transition:var(--transition);
+  flex-shrink:0;
+}
+
+.hamburger:hover{
+  background:rgba(212,175,55,0.1);
+  box-shadow:0 0 15px rgba(212,175,55,0.3);
+}
+
+.hamburger span{
+  display:block;
+  width:100%;
+  height:3px;
+  background:var(--gold);
+  border-radius:2px;
+  transition:var(--transition);
+}
+
+/* Animación del hamburguesa al abrir */
+.hamburger.active span:nth-child(1){
+  transform:rotate(45deg) translate(6px,6px);
+}
+.hamburger.active span:nth-child(2){
+  opacity:0;
+}
+.hamburger.active span:nth-child(3){
+  transform:rotate(-45deg) translate(6px,-6px);
+}
+
+/* ===== MOBILE MENU ===== */
+.mobile-overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.85);
+  opacity:0;
+  visibility:hidden;
+  transition:var(--transition);
+  z-index:998;
+}
+
+.mobile-overlay.active{
+  opacity:1;
+  visibility:visible;
+}
+
+.mobile-menu{
+  position:fixed;
+  top:0;
+  right:-100%;
+  width:85%;
+  max-width:320px;
+  height:100vh;
+  background:var(--black-card);
+  border-left:2px solid var(--gold);
+  padding:6rem 2rem 2rem;
+  transition:var(--transition);
+  z-index:999;
+  display:flex;
+  flex-direction:column;
+}
+
+.mobile-menu.active{
+  right:0;
+}
+
+.mobile-menu a{
+  display:block;
+  color:var(--gold);
+  font-size:1.4rem;
+  font-family:'Playfair Display',serif;
+  margin-bottom:1.5rem;
+  padding:0.8rem 0;
+  border-bottom:1px solid rgba(212,175,55,.2);
+  transition:var(--transition);
+}
+
+.mobile-menu a:hover,
+.mobile-menu a.active{
+  color:var(--white);
+  padding-left:10px;
+  border-color:var(--gold);
+}
+
+/* ===== CONTACT SECTION ===== */
+section{
+  padding:80px 5%;
+  position:relative;
+  z-index:5;
+  text-align:center;
+}
+
+h2{
+  color:var(--gold);
+  font-size:2.8rem;
+  margin-bottom:40px;
+}
+
+.contact-container{
+  max-width:800px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+}
+
+.card{
+  background:var(--black-card);
+  border:1px solid rgba(212,175,55,.2);
+  padding:30px;
+  border-radius:10px;
+  transition:var(--transition);
+}
+
+.card:hover{
+  border-color:var(--gold);
+  box-shadow:0 8px 25px rgba(212,175,55,.15);
+}
+
+.contact-title{
+  color:var(--gold);
+  font-size:1.4rem;
+  margin-bottom:15px;
+  font-family:'Playfair Display',serif;
+}
+
+.card p{
+  color:var(--gray);
+  line-height:1.7;
+  margin-bottom:20px;
+}
+
+.contact-links{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:15px;
+}
+
+.contact-link{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:14px 20px;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  border-radius:8px;
+  font-weight:600;
+  transition:var(--transition);
+  text-decoration:none;
+}
+
+.contact-link:hover{
+  background:var(--gold);
+  color:var(--black);
+  transform:translateY(-2px);
+  box-shadow:0 5px 15px rgba(212,175,55,.3);
+}
+
+.contact-link::before{
+  content:"→";
+  font-weight:bold;
+  transition:var(--transition);
+}
+
+.contact-link:hover::before{
+  transform:translateX(3px);
+}
+
+iframe{
+  width:100%;
+  height:300px;
+  border:0;
+  border-radius:8px;
+  margin-top:15px;
+  filter:grayscale(30%) contrast(1.1);
+  transition:var(--transition);
+}
+
+iframe:hover{
+  filter:grayscale(0%) contrast(1);
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:var(--black-card);
+  text-align:center;
+  padding:1.8rem 1rem;
+  color:#999;
+  border-top:1px solid rgba(212,175,55,.3);
+  margin-top:2rem;
+}
+
+footer p{
+  font-size:0.95rem;
+}
+
+/* ===== RESPONSIVE - TABLET Y MOBILE (≤768px) ===== */
+@media(max-width:768px){
+  
+  /* Mostrar hamburguesa y ocultar nav desktop */
+  .hamburger{
+    display:flex; /* SOLO VISIBLE EN MOBILE/TABLET */
+  }
+  
+  nav.desktop-nav{
+    display:none; /* OCULTAR NAV DESKTOP EN MOBILE */
+  }
+  
+  /* Ajustes de header */
+  .header-inner{
+    padding:0 0.5rem;
+  }
+  
+  .header-logo img{
+    height:55px;
+    width:55px;
+  }
+  
+  /* Ajustes de sección de contacto */
+  h2{
+    font-size:2.2rem;
+  }
+  
+  section{
+    padding:50px 4%;
+  }
+  
+  .card{
+    padding:25px 20px;
+  }
+  
+  .contact-title{
+    font-size:1.2rem;
+  }
+  
+  .contact-link{
+    padding:12px 16px;
+    font-size:0.95rem;
+  }
+  
+  iframe{
+    height:250px;
+  }
+}
+
+/* ===== MOBILE PEQUEÑO (≤480px) ===== */
+@media(max-width:480px){
+  
+  .header-logo img{
+    height:50px;
+    width:50px;
+  }
+  
+  h2{
+    font-size:1.9rem;
+  }
+  
+  .card p{
+    font-size:0.95rem;
+  }
+  
+  .contact-link{
+    font-size:0.9rem;
+    padding:10px 14px;
+  }
+  
+  iframe{
+    height:220px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Inicio</a>
+  <a href="acerca.html">Acerca de</a>
+  <a href="precios.html">Precios</a>
+  <a href="contacto.html" class="active">Contacto</a>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="container">
+    <div class="header-inner">
+      
+      <!-- Logo -->
+      <div class="header-logo">
+        <img src="logotipo.jpg" alt="The Luxury Studio Logo">
+        <div class="logo-text">
+          <span class="logo-main">THE LUXURY STUDIO</span>
+          <span class="logo-sub">Barbershop</span>
+        </div>
+      </div>
+
+      <!-- Desktop Navigation (SIEMPRE VISIBLE EN DESKTOP) -->
+      <nav class="desktop-nav">
+        <a href="index.html">Inicio</a>
+        <a href="acerca.html">Acerca de</a>
+        <a href="precios.html">Precios</a>
+        <a href="contacto.html" class="active">Contacto</a>
+      </nav>
+
+      <!-- Hamburger Button (SOLO EN MOBILE/TABLET) -->
+      <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+    </div>
+  </div>
+</header>
+
+<!-- Contact Section -->
+<section>
+  <h2>Reserva tu cita</h2>
+
+  <div class="contact-container">
+
+    <!-- Ubicación Card -->
+    <div class="card">
+      <h3 class="contact-title">📍 Ubicación</h3>
+      <p>
+        Av. Repúblicas 94, Colonia Portales Sur,<br>
+        Benito Juárez, Ciudad de México
+      </p>
+      <iframe 
+        src="https://www.google.com/maps?q=Av.+Rep%C3%BAblicas+94,+Portales+Sur,+Ciudad+de+M%C3%A9xico&output=embed" 
+        title="Ubicación de The Luxury Studio"
+        loading="lazy">
+      </iframe>
+    </div>
+
+    <!-- Contacto Card -->
+    <div class="card">
+      <h3 class="contact-title">📱 Contáctanos</h3>
+      <div class="contact-links">
+        <a class="contact-link" href="https://wa.me/525564439894" target="_blank" rel="noopener">
+          WhatsApp
+        </a>
+        <a class="contact-link" href="https://maps.app.goo.gl/4jrY9n8yaoUjbYRs9" target="_blank" rel="noopener">
+          Google Maps
+        </a>
+        <a class="contact-link" href="https://www.instagram.com/theluxurystudio_bs" target="_blank" rel="noopener">
+          Instagram
+        </a>
+        <a class="contact-link" href="https://www.tiktok.com/@the.luxury.studio" target="_blank" rel="noopener">
+          TikTok
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 The Luxury Studio Barbershop</p>
+</footer>
+
+<!-- JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  
+  const hamburger = document.getElementById('hamburgerBtn');
+  const mobileOverlay = document.getElementById('mobileOverlay');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const body = document.body;
+
+  function toggleMenu() {
+    const isActive = mobileMenu.classList.toggle('active');
+    mobileOverlay.classList.toggle('active');
+    hamburger.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', isActive);
+    body.style.overflow = isActive ? 'hidden' : '';
+  }
+
+  function closeMenu() {
+    mobileMenu.classList.remove('active');
+    mobileOverlay.classList.remove('active');
+    hamburger.classList.remove('active');
+    hamburger.setAttribute('aria-expanded', 'false');
+    body.style.overflow = '';
+  }
+
+  // Click en hamburguesa (solo si existe el elemento)
+  hamburger?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
+  });
+
+  // Click en overlay para cerrar
+  mobileOverlay?.addEventListener('click', closeMenu);
+
+  // Click en enlaces del menú móvil para cerrar
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Cerrar con tecla ESC
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape' && mobileMenu.classList.contains('active')){
+      closeMenu();
+      hamburger?.focus();
+    }
+  });
+
+  // Prevenir scroll cuando el menú está abierto
+  mobileMenu?.addEventListener('touchmove', (e) => {
+    e.stopPropagation();
+  }, { passive: false });
+
+});
+</script>
+
+</body>
+</html>
