@@ -1,9 +1,0 @@
-{
-  "name": "the-luxury-studio-local",
-  "private": true,
-  "version": "3.0.0",
-  "type": "module",
-  "scripts": {
-    "start": "node server.mjs"
-  }
-}
